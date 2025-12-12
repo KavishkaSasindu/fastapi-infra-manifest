@@ -15,7 +15,7 @@ specs:
         app: {{ .Release.Name }}-deployment
     spec:
       imagePullSecrets:
-        - name: ecr-cred
+        - name: ecr-secret
       containers:
         - name: {{ .Release.Name }}-deployment
           image: {{ .Values.deployment.image }}:{{ .Values.deployment.tag }}
