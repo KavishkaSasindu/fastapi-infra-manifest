@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://gitlab.com/kavishkasasindu-group/my-deploy-argocd.git
+    repoURL: https://github.com/KavishkaSasindu/fastapi-infra-manifest.git
     targetRevision: main
     path: fastapi-app-helm
     helm:
