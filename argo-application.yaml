@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fastapi-helm
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://gitlab.com/kavishkasasindu-group/my-deploy-argocd.git
+    targetRevision: main
+    path: fastapi-app-helm
+    helm:
+      valueFiles:
+      - values.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
