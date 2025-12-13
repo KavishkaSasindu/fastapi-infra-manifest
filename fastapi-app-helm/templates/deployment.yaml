@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   name: {{ .Release.Name }}-{{ .Chart.Name }}
   labels:
-    env: {{ .Release.Name }}
-specs:
+    env: "{{ .Release.Name }}"
+spec:
   replicas: {{ .Values.deployment.replicas }}
   selector:
     matchLabels:
@@ -18,8 +18,8 @@ specs:
         - name: ecr-secret
       containers:
         - name: {{ .Release.Name }}-deployment
-          image: {{ .Values.deployment.image }}:{{ .Values.deployment.tag }}
-          imagePullPolicy: {{ .Values.deployment.pullPolicy }}
+          image: "{{ .Values.deployment.image }}:{{ .Values.deployment.tag }}"
+          imagePullPolicy: "{{ .Values.deployment.pullPolicy }}"
           ports:
             - containerPort: 8000
           env:
