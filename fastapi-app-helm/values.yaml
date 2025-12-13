@@ -1,5 +1,5 @@
 deployment:
   replicas: 3
   image: "525163865240.dkr.ecr.us-east-1.amazonaws.com/fastapi_repo"
-  tag: ""
+  tag: "23"
   pullPolicy: Always
